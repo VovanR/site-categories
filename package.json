@@ -1,0 +1,22 @@
+{
+  "name": "site-categories",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VovanR/site-categories.git"
+  },
+  "author": "Vladimir Rodkin <mail@vovanr.com> (http://vovanr.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/VovanR/site-categories/issues"
+  },
+  "homepage": "https://github.com/VovanR/site-categories#readme",
+  "dependencies": {
+    "graphql": "^0.12.3"
+  }
+}

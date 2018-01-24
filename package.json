@@ -2,16 +2,16 @@
   "name": "site-categories",
   "version": "0.0.0",
   "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/VovanR/site-categories.git"
-  },
-  "author": "Vladimir Rodkin <mail@vovanr.com> (http://vovanr.com/)",
   "license": "MIT",
+  "repository": "VovanR/site-categories",
+  "author": {
+    "name": "Vladimir Rodkin",
+    "email": "mail@vovanr.com",
+    "url": "https://github.com/VovanR"
+  },
+  "scripts": {
+    "server": "node server.js"
+  },
   "bugs": {
     "url": "https://github.com/VovanR/site-categories/issues"
   },

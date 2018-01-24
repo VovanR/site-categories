@@ -1,18 +1,22 @@
-var {graphql} = require('graphql');
-var schema = require('./schema.js');
+const fs = require('fs');
+const express = require('express');
+const graphqlHTTP = require('express-graphql');
+const { buildSchema } = require('graphql');
 
-var query = '{ hello }';
+const schemaRaw = fs.readFileSync('./schema.graphql', 'utf-8')
+const schema = buildSchema(schemaRaw)
 
-graphql(schema, query)
-    .then(result => {
+const root = { hello: () => 'Hello world!' };
 
-      // Prints
-      // {
-      //   data: { hello: "world" }
-      // }
-      console.log(result);
+const GRAPHQL_PORT = 4000;
 
-    })
-    .catch(err => {
-        console.error('Oops!')
-    });
+const graphQLServer = express();
+graphQLServer.use('/graphql', graphqlHTTP({
+  schema: schema,
+  rootValue: root,
+  graphiql: true,
+  pretty: true,
+}));
+graphQLServer.listen(GRAPHQL_PORT, () => {
+    console.log(`GraphQL Server is now running on http://localhost:${GRAPHQL_PORT}/graphql`)
+});
